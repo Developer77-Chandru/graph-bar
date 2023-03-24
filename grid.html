@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRID</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"> -->
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></script>" -->
+
+</head>
+<style>
+    @font-face {
+  font-family: myFirstFont;
+  src: url(Poppins/Poppins-Regular.ttf);
+}
+  table{
+    align-items: center;
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+  
+    color: black;
+    
+  }
+  footer{
+  background-color: #2a6426;
+  color: white;
+  margin-top: 0px;
+  padding: .5%;
+  }
+
+</style>
+<body>
+
+
+  <nav class="navbar navbar-inverse" style="background-color:#2a6426; border: none; font-family: myFirstFont; text-align: center;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="home.html" style="color: white;">TASK LIST</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar" >
+        <ul class="nav navbar-nav" >
+          <li class=""><a href="home.html"style="color:  white;">HOME</a></li>
+          
+          <li><a href="code.html" style="color:  white;">CODES</a></li>
+          <li><a href="graph.html" style="color:  white;">GRAPH</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"style="color:  white;">GRIDS <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="grid.html">Create a grid</a></li>
+              <li><a href="grid.html">Search for a grid</a></li>
+             
+            </ul>
+          </li>
+          <a href="index.html" class="btn btn-success " style="margin-top: 7px; margin-left: 50px;">
+            <span class="glyphicon glyphicon-log-out"></span> Log out
+          </a>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+  
+  <table id="HourlysalesSummary"></table>
+
+
+  <footer>
+
+    <p class="text-center p-5">
+       <span class="footer-content" >© Copyright And Developed By <br> - Cʜᴀɴᴅʀᴜ ❤️</span>
+    </p>
+    </footer>
+</body>
+<script>
+  $(document).ready(function() {
+
+var tableData = [{
+    "LIST": "Legal Requirnment",
+    "GB": "",
+    "FR": "12"
+
+  },
+  {
+    "LIST": "Size restriction",
+    "GB": "1.2mm",
+    "FR": "1.5mm"
+
+  },
+  {
+    "LIST": "The word ingredient",
+    "GB": "GB2",
+    "FR": "FR2"
+
+  },
+  {
+    "LIST": "Ingredients (tea)",
+    "GB": "GB50",
+    "FR": "FR50"
+
+  },
+  {
+    "LIST": "Net Weight ",
+    "GB": "GB1",
+    "FR": "FR2"
+
+  },
+  {
+    "LIST": "Packing Date",
+    "GB": "GB3",
+    "FR": ""
+
+  },
+  {
+    "LIST": "Best before",
+    "GB": "GB4",
+    "FR": "FR42"
+
+  },
+  {
+    "LIST": "Blend Name",
+    "GB": "GB99",
+    "FR": "FR99(2)"
+
+  },
+  {
+    "LIST": "Tea Information",
+    "GB": "GB1",
+    "FR": ""
+
+  },
+  {
+    "LIST": "No.of Tea bags",
+    "GB": "GB22",
+    "FR": ""
+
+  },
+  {
+    "LIST": "Brewing instructions",
+    "GB": "Gb7",
+    "FR": "FR7"
+
+  },
+  {
+    "LIST": "Storage",
+    "GB": "GB5a(2)",
+    "FR": "FR7"
+
+  },
+  {
+    "LIST": "Packed in shipping (country of orgin)",
+    "GB": "Gb7",
+    "FR": "FR401"
+
+  },
+  {
+    "LIST": "Factory Address",
+    "GB": "",
+    "FR": "CHENNAI"
+
+  },
+  {
+    "LIST": "Exporter / Producer",
+    "GB": "GB685",
+    "FR": ""
+
+  },
+  {
+    "LIST": " Importer (quality issue)",
+    "GB": "",
+    "FR": "NO"
+
+  },
+  {
+    "LIST": "Batch no",
+    "GB": "90",
+    "FR": ""
+
+  },
+  {
+    "LIST": "Registration no",
+    "GB": "",
+    "FR": "BG"
+
+  },
+  
+  {
+    "LIST":"Trademark Address",
+    "GB": "LIGHT",
+    "FR": ""
+
+  },
+  {
+    "LIST": "GM free",
+    "GB": "",
+    "FR": "FR"
+
+  },
+  
+  {
+    "LIST": "Owners TM",
+    "GB": "",
+    "FR": "TN"
+
+  },
+  
+  {
+    "LIST": "Tea orgin",
+    "GB": "INDIA",
+    "FR": ""
+
+  },
+  
+  {
+    "LIST": "Packer no",
+    "GB": "",
+    "FR": "10"
+
+  },
+  
+  {
+    "LIST": "Sales & Customer service",
+    "GB": "GB",
+    "FR": ""
+
+  },
+  
+  {
+    "LIST": "Copyright",
+    "GB": "GB",
+    "FR": ""
+
+  },
+  {
+    "LIST": "Barcode",
+    "GB": "GB",
+    "FR": ""
+
+  },
+  {
+    "LIST": "Carton Number (on flap)",
+    "GB": "GB",
+    "FR": ""
+
+  },
+  {
+    "LIST": "Grate Taste Award ",
+    "GB": "Taste",
+    "FR": ""
+
+  },
+  {
+    "LIST": "Ethical tea Partnership logo",
+    "GB": "Logo",
+    "FR": ""
+
+  },
+  {
+    "LIST": "E Symbol 3mm High",
+    "GB": "E",
+    "FR": "E"
+
+  }
+  
+  
+  
+  
+
+]
+
+
+function addTable(tableValue) {
+  var col = Object.keys(tableValue[0]);
+  var countNum = col.filter(i => !isNaN(i)).length;
+  var num = col.splice(0, countNum);
+  col = col.concat(num);
+  var table = document.createElement("table");
+  var tr = table.insertRow(0); // TABLE ROW.
+  for (var i = 0; i < col.length; i++) {
+    var th = document.createElement("th"); // TABLE HEADER.
+    th.innerHTML = col[i];
+    tr.appendChild(th);
+    tr.classList.add("text-right");
+    tr.classList.add("head")
+  }
+  for (var i = 0; i < tableValue.length; i++) {
+    tr = table.insertRow(-1);
+    for (var j = 0; j < col.length; j++) {
+      var tabCell = tr.insertCell(-1);
+      var tabledata = tableValue[i][col[j]];
+      if (tabledata && !isNaN(tabledata)) {
+        tabledata = parseInt(tabledata).toLocaleString('en-in')
+      }
+      if (tableData[i]['GB'] === tableData[i][col[j]]) {
+        //i want to make this cell editable
+        tabCell.setAttribute('contenteditable', true); // <--- ADDING HERE
+        tabCell.innerHTML = tabledata;
+      } else {
+        span = document.createElement("span");
+        span.innerHTML = tabledata;
+        tabCell.appendChild(span)
+      }
+      if (j > 1)
+
+        tabCell.classList.add("text-right");
+
+    }
+  }
+  var divContainer = document.getElementById("HourlysalesSummary");
+  divContainer.innerHTML = "";
+  divContainer.appendChild(table);
+  table.classList.add("table");
+  // table.classList.add("table-striped");
+  table.classList.add("table-bordered");
+  table.classList.add("table-center");
+  // table.classList.add("table-hover");
+
+}
+addTable(tableData);
+
+});
+</script>
+</html>

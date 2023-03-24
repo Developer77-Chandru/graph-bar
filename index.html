@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+        @font-face {
+  font-family: myFirstFont;
+  src: url(Poppins/Poppins-Regular.ttf);
+}
+        body{
+            height: 100vh;
+            width: 100%;
+            display: flex ;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #5b74ef,#eb728b);
+        }
+        form{
+            font-family: myFirstFont;
+            width: 25rem;
+            height: 28rem;
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.10);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 37);
+            border-radius: 30px;
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        h1{
+            font-family: myFirstFont;
+            font-size: 45px;
+            text-align: center;
+            color: white;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            opacity: 0.7 ;
+        }
+        label{
+            margin-top: 20px;
+            font-size: 20px;
+            color: white;
+            opacity: 0.8;
+            margin-left: 10%;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+            /* position: relative; */
+        }
+        input{
+            width: 80%;
+            margin: 5% auto;
+            margin-bottom: 8%;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        a{
+            width: 40%;
+            margin: 3% auto;
+            font-size: 25px;
+            color: white;
+            opacity: .7;
+            background: rgba(255, 255, 255, 0.10);
+            padding: 10px 30px;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+            box-shadow: 3px 3px 5px rgba(31, 38, 135, 37);
+            margin-top: 2px;
+            cursor: pointer;
+            text-align: center;
+        }
+        p{
+            font-size: 20px;
+            color: white;
+            opacity: .7;
+            text-align: center;
+            cursor: pointer;
+        }
+       
+
+        ::placeholder {
+  color: white;
+  opacity: .4;
+
+}
+
+:-ms-input-placeholder { 
+ color: white;
+ opacity: .4;
+}
+
+::-ms-input-placeholder { 
+ color: white;
+ opacity: .4;
+}
+    </style>
+    <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/all.min.css">
+</head>
+<body>
+    <form>
+        <h1>LOG IN</h1>
+        <label id="username">@Username</label>
+        <input type="email" id="mail" placeholder="Enter Your Email ">
+        <label id="pwd" onclick="check()">Password</label>
+        <input type="password" id="password" placeholder="Enter Your Password" onclick="check()">                                                                                       
+        <a   onclick="myFunction()">Login</a>
+        <p>Forgot password?</p>
+    </form>
+
+
+
+  
+</body>
+
+<script>
+
+function check(){
+    var mail = document.getElementById("mail").value;
+    var val = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if (mail == "") {
+    alert("Please Enter Your Email")
+    
+  }
+  if (mail.match(val)) {
+    User();
+    
+  }
+  else {
+    alert("Email Address is Invalid, Please Enter the Valid Email Address");
+    
+  }
+}
+
+      
+
+
+const showpassword = document.querySelector("#show-password")
+const passwordfield = document.querySelector("#password")
+
+showpassword.addEventListener("click", function(){
+    this.classList.toggle("-eye-slash");
+    const type = passwordfield.getAttribute("type")==="password" ? "text" : "password";
+    passwordfield.setAttribute("type",type)
+})
+
+function myFunction(){
+    var email=document.getElementById('mail').value;
+    var pass=document.getElementById('password').value;
+    if(email=="" || pass==""){
+        alert("Please Enter username and password!!")
+        
+    }
+    else{
+        window.location.href='home.html'
+    }
+ }
+
+
+    </script>
+    
+</html>

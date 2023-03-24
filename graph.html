@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAPH</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <style>
+      @font-face {
+  font-family: myFirstFont;
+  src: url(Poppins/Poppins-Regular.ttf);
+}
+#myChart{
+  width: 105rem !important;
+  height: auto !important;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 5%;
+}
+    footer{
+      background-color: #2a6426;
+      color: white;
+      padding: 1%;
+    }
+    .a1{
+      text-align: center;
+      font-family:  myFirstFont;
+    }
+    .a2{
+      text-align: center;
+      font-family:  myFirstFont;
+      margin-bottom: 5%;
+    }
+</style>
+</head>
+    
+
+  
+    
+<body>
+
+  <nav class="navbar navbar-inverse" style="background-color:#2a6426; border: none; font-family:  myFirstFont; text-align: center; margin-bottom: 5%;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="home.html" style="color: white;">TASK LIST</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar" >
+        <ul class="nav navbar-nav" >
+          <li class=""><a href="home.html"style="color:  white;">HOME</a></li>
+          
+          <li><a href="code.html" style="color:  white;">CODES</a></li>
+          <li><a href="graph.html" style="color:  white;">GRAPH</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"style="color:  white;">GRIDS <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="grid.html">Create a grid</a></li>
+              <li><a href="grid.html">Search for a grid</a></li>
+             
+            </ul>
+          </li>
+          <a href="index.html" class="btn btn-success " style="margin-top: 7px; margin-left: 50px;">
+            <span class="glyphicon glyphicon-log-out"></span> Log out
+          </a>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+    <h1 class="a1">GRAPH MODULE</h1>
+    <h4 class="a2">This is the following graph displayed</h4>
+
+<canvas id="myChart"></canvas>
+
+<footer>
+
+  <p class="text-center p-5">
+     <span class="footer-content" >© Copyright And Developed By <br> - Cʜᴀɴᴅʀᴜ ❤️</span>
+  </p>
+  </footer>
+
+
+<script>
+var xValues = ["10", "20", "30", "40", "50","60"];
+var yValues = [70.1, 70.3, 70.2, 70.1, 70.4, 70.3,];
+var barColors = ["red", "green","blue","orange","green", "yellow" ,];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+    
+    }
+  }
+});
+</script>
+
+</body>
+</html>
